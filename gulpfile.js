@@ -10,7 +10,6 @@ let gulp = require('gulp'),
 	pngquant = require('imagemin-pngquant'),
 	cache = require('gulp-cache'),
 	twig = require('gulp-twig'),
-	fileinclude = require('gulp-file-include'),
 	autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('clean', async function(){
@@ -42,7 +41,6 @@ gulp.task('css-libs', function(){
 gulp.task('scripts', function(){
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		// 'app/libs/owl.carousel/dist/owl.carousel.js',
 		// 'app/libs/slick/slick/slick.min.js',
 	])
 	.pipe(concat('libs.min.js'))
@@ -71,19 +69,19 @@ gulp.task('img', function(){
 });
 
 gulp.task('export', async function(){
-	let buildCss = gulp.src('app/css/*.css')
+	let buildCss = gulp.src('app/css/**/*.css')
 	.pipe(gulp.dest('dist/css'));
 
-	let buildFonts = gulp.src('app/fonts/*')
+	let buildFonts = gulp.src('app/fonts/**/*')
 	.pipe(gulp.dest('dist/fonts'));
 
-	let buildJs = gulp.src('app/js/*')
+	let buildJs = gulp.src('app/js/**/*')
 	.pipe(gulp.dest('dist/js'));
 
-	let buildHtml = gulp.src('app/*.html')
+	let buildHtml = gulp.src('app/**/*.html')
 	.pipe(gulp.dest('dist/'));
 
-	let BuildImg = gulp.src('app/img/*')
+	let BuildImg = gulp.src('app/img/**/*')
     .pipe(gulp.dest('dist/img')); 
 });
 
