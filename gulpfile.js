@@ -88,7 +88,7 @@ gulp.task('export', async function(){
 gulp.task('watch',  function(){
 	gulp.watch('app/sass/**/*.scss', gulp.parallel('sass'));
 	gulp.watch('app/template/**/*.twig', gulp.parallel('twig'));
-	gulp.watch('app/js/**/*.js').on('change', browserSync.reload);
+	gulp.watch('app/js/**/*.js', gulp.parallel('scripts'));
 });
 
 gulp.task('build', gulp.parallel('clean', 'export'))
