@@ -8,40 +8,23 @@
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<title>Document</title>
-	{% include "block/style.twig" %}
 </head>
 <body>
 	
-   {% include "block/header.twig" %}
-    
+	<header class="header">
+		{% include "block/header.twig" %}
+	</header>
+	
+	<div class="overly"></div>
+	{% include "block/mob_nav.twig" %}
 
 	<div class="container">
 		
-		<div class="rating__user">
-			<div class="title">Rating #1:</div>
-			<div class="rating__group">
-				<input class="rating__input" type="radio" id="rating-1" name="rating" value="1" aria-label="horrible">
-				<label class="rating__star" for="rating-1"></label>
-
-				<input class="rating__input" type="radio" id="rating-2" name="rating" value="2" aria-label="badly">
-				<label class="rating__star" for="rating-2"></label>
-
-				<input class="rating__input" type="radio" id="rating-3" name="rating" value="3" aria-label="normal">
-				<label class="rating__star" for="rating-3"></label>
-
-				<input class="rating__input" type="radio" id="rating-4" name="rating" value="4" aria-label="good">
-				<label class="rating__star" for="rating-4"></label>
-
-				<input class="rating__input" type="radio" id="rating-5" name="rating" value="5" aria-label="excellent">
-				<label class="rating__star" for="rating-5"></label>
-			</div>
-			
-		</div>
-
 	</div>
 
-	
-	{% include "block/footer.twig" %}
+	<footer class="footer">
+		{% include "block/footer.twig" %}
+	</footer>
 	
 
 	<!-- javascript -->

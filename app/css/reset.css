@@ -63,7 +63,8 @@ a, button {
 	cursor: pointer;
 }
 button {
-	border:transparent;
+	border:none;
+	background: transparent;
 }
 a:hover, button:hover {
 	cursor: pointer;
