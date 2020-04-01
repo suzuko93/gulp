@@ -47,7 +47,7 @@
   font-weight: 100;
   font-display: swap;
   src: local("Montserrat-Thin"),
-  url("fonts/Montserrat-Thin.woff") format("woff");}
+  url("../fonts/Montserrat-Thin.woff") format("woff");}
 
 @font-face {
   font-family: "Montserrat";
@@ -55,7 +55,7 @@
   font-weight: 100;
   font-display: swap;
   src: local("Montserrat-ThinItalic"),
-  url("fonts/Montserrat-ThinItalic.woff") format("woff");}
+  url("../fonts/Montserrat-ThinItalic.woff") format("woff");}
 
 @font-face {
   font-family: "Montserrat";
@@ -63,7 +63,7 @@
   font-weight: 200;
   font-display: swap;
   src: local("Montserrat-ExtraLight"),
-  url("fonts/Montserrat-ExtraLight.woff") format("woff");}
+  url("../fonts/Montserrat-ExtraLight.woff") format("woff");}
 
 @font-face {
   font-family: "Montserrat";
@@ -71,7 +71,7 @@
   font-weight: 200;
   font-display: swap;
   src: local("Montserrat-ExtraLightItalic"),
-  url("fonts/Montserrat-ExtraLightItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-ExtraLightItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -79,7 +79,7 @@
   font-weight: 300;
   font-display: swap;
   src: local("Montserrat-Light"),
-  url("fonts/Montserrat-Light.woff") format("woff"); }
+  url("../fonts/Montserrat-Light.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -87,7 +87,7 @@
   font-weight: 300;
   font-display: swap;
   src: local("Montserrat-LightItalic"),
-  url("fonts/Montserrat-LightItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-LightItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -95,7 +95,7 @@
   font-weight: 400;
   font-display: swap;
   src: local("Montserrat-Regular"),
-  url("fonts/Montserrat-Regular.woff") format("woff"); }
+  url("../fonts/Montserrat-Regular.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -103,7 +103,7 @@
   font-weight: 400;
   font-display: swap;
   src: local("Montserrat-Italic"),
-  url("fonts/Montserrat-Italic.woff") format("woff"); }
+  url("../fonts/Montserrat-Italic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -111,7 +111,7 @@
   font-weight: 500;
   font-display: swap;
   src: local("Montserrat-Medium"),
-  url("fonts/Montserrat-Medium.woff") format("woff"); }
+  url("../fonts/Montserrat-Medium.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -119,7 +119,7 @@
   font-weight: 500;
   font-display: swap;
   src: local("Montserrat-MediumItalic"),
-  url("fonts/Montserrat-MediumItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-MediumItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -127,7 +127,7 @@
   font-weight: 600;
   font-display: swap;
   src: local("Montserrat-SemiBold"),
-  url("fonts/Montserrat-SemiBold.woff") format("woff"); }
+  url("../fonts/Montserrat-SemiBold.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -135,7 +135,7 @@
   font-weight: 600;
   font-display: swap;
   src: local("Montserrat-SemiBoldItalic"),
-  url("fonts/Montserrat-SemiBoldItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-SemiBoldItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -143,7 +143,7 @@
   font-weight: 700;
   font-display: swap;
   src: local("Montserrat-Bold"),
-  url("fonts/Montserrat-Bold.woff") format("woff"); }
+  url("../fonts/Montserrat-Bold.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -151,7 +151,7 @@
   font-weight: 700;
   font-display: swap;
   src: local("Montserrat-BoldItalic"),
-  url("fonts/Montserrat-BoldItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-BoldItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -159,7 +159,7 @@
   font-weight: 800;
   font-display: swap;
   src: local("Montserrat-ExtraBold"),
-  url("fonts/Montserrat-ExtraBold.woff") format("woff"); }
+  url("../fonts/Montserrat-ExtraBold.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -167,7 +167,7 @@
   font-weight: 800;
   font-display: swap;
   src: local("Montserrat-ExtraBoldItalic"),
-  url("fonts/Montserrat-ExtraBoldItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-ExtraBoldItalic.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -175,7 +175,7 @@
   font-weight: 900;
   font-display: swap;
   src: local("Montserrat-Black"),
-  url("fonts/Montserrat-Black.woff") format("woff"); }
+  url("../fonts/Montserrat-Black.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -183,7 +183,7 @@
   font-weight: 900;
   font-display: swap;
   src: local("Montserrat-BlackItalic"),
-  url("fonts/Montserrat-BlackItalic.woff") format("woff"); }
+  url("../fonts/Montserrat-BlackItalic.woff") format("woff"); }
 
 /* Roboto */
   @font-face {
@@ -886,3 +886,59 @@
   font-display: swap;
   src: local("OpenSans-ExtraBoldItalic"),
         url("../fonts/OpenSans-ExtraBoldItalic.woff") format("woff"); }
+/* Raleway */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Raleway-ExtraLight"),
+  url("../fonts/Raleway-ExtraLight.woff") format("woff");}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Raleway-Regular"),
+  url("../fonts/Raleway-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Raleway-Medium"),
+  url("../fonts/Raleway-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Raleway-Bold"),
+  url("../fonts/Raleway-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Raleway-BoldItalic"),
+  url("../fonts/Raleway-BoldItalic.woff") format("woff"); }
+
+/* Merriweather */
+@font-face {
+  font-family: "Merriweather";
+  src: local("Merriweather-Regular"),
+        url("../fonts/Merriweather-Regular.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;}
+@font-face {
+  font-family: "Merriweather";
+  src: local("Merriweather-Bold"),
+        url("../fonts/Merriweather-Bold.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;}
