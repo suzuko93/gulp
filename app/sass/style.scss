@@ -1,6 +1,18 @@
 @import "../css/reset";
 @import "../css/fonts";
 
+/* ============================ mixin */
+@mixin sprite($width, $height, $icon) {
+  width:$width;
+  height:$height;
+  background: center center / cover no-repeat;
+  background-image: url($icon);
+}
+.icon {
+	@include sprite(40px, 39px, "../img/sprite.svg#bronze-medal");
+	margin:50px;
+	border:1px solid red;
+}
 /* =========================== all */
 
 body {
@@ -180,7 +192,41 @@ img {
 		}
 	}
 }
-
+/* scroll vertical */
+.scroll {
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+	-ms-scroll-chaining: none;
+	overscroll-behavior: contain;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	scrollbar-width: thin;
+	scrollbar-color: #DCDFE9 transparent;
+}
+.scroll::-webkit-scrollbar {
+	height: 50%;
+	width: 4px; 
+}
+.scroll::-webkit-scrollbar-track {
+	background-color: transparent; 
+}
+.scroll::-webkit-scrollbar-thumb {
+	background-color: #DCDFE9;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+	background-color: #DCDFE9; 
+}
+.scroll::-webkit-scrollbar-thumb:active {
+	background-color: #DCDFE9; 
+}
+.scroll::-webkit-scrollbar-thumb:vertical {
+	min-height: 50%; 
+}
+.scroll::-webkit-scrollbar-thumb:horizontal {
+	min-width: 4px; 
+}
 /* form */
 form {
 	input {
@@ -267,8 +313,8 @@ input[type="search"]::-webkit-search-results-decoration {
 		clear: both;
 	}
 }
-/* ============================ container */
 
+/* ============================ container */
 .container {
 	max-width: 1270px;
 	padding: 0 15px;

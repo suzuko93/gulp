@@ -10,7 +10,21 @@ let gulp = require('gulp'),
 	pngquant = require('imagemin-pngquant'),
 	cache = require('gulp-cache'),
 	twig = require('gulp-twig'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+	svgSprite = require('gulp-svg-sprite');
+
+gulp.task('svgSprite', function () {
+    return gulp.src('app/img/sprite/*.svg') 
+        .pipe(svgSprite({
+                mode: {
+                    stack: {
+                        sprite: "../sprite.svg" 
+                    }
+                },
+            }
+        ))
+        .pipe(gulp.dest('app/img/'));
+});
 
 gulp.task('clean', async function(){
   del.sync('dist')
@@ -69,7 +83,7 @@ gulp.task('img', function(){
 });
 
 gulp.task('export', async function(){
-	let buildCss = gulp.src('app/css/**/*.css')
+	let buildCss = gulp.src(['app/css/style.css', 'app/css/libs.min.css'])
 	.pipe(gulp.dest('dist/css'));
 
 	let buildFonts = gulp.src('app/fonts/**/*')
@@ -93,4 +107,4 @@ gulp.task('watch',  function(){
 
 gulp.task('build', gulp.parallel('clean', 'export'))
 
-gulp.task('default', gulp.parallel('watch', 'css-libs', 'scripts', 'twig', 'browser-sync'));
+gulp.task('default', gulp.parallel('watch', 'svgSprite', 'css-libs', 'scripts', 'twig', 'browser-sync'));

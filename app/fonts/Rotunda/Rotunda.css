@@ -1,0 +1,56 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3919776, 2020-06-28T15:01:06-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Rotunda-Light by TipoType
+ * URL: https://www.myfonts.com/fonts/tipotype/rotunda/light/
+ * 
+ * Webfont: Rotunda-Regular by TipoType
+ * URL: https://www.myfonts.com/fonts/tipotype/rotunda/regular/
+ * 
+ * Webfont: Rotunda-Medium by TipoType
+ * URL: https://www.myfonts.com/fonts/tipotype/rotunda/medium/
+ * 
+ * Webfont: Rotunda-Bold by TipoType
+ * URL: https://www.myfonts.com/fonts/tipotype/rotunda/bold/
+ * 
+ * Webfont: Rotunda-ExtraBold by TipoType
+ * URL: https://www.myfonts.com/fonts/tipotype/rotunda/extra-bold/
+ * 
+ * 
+ * Webfonts copyright: © TipoType 2019, all rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3bcfa0");
+  
+@font-face {
+  font-family: 'Rotunda-Bold';
+  src: url('../fonts/Rotunda-Bold/font.woff2') format('woff2'), url('../fonts/Rotunda-Bold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Rotunda-ExtraBold';
+  src: url('../fonts/Rotunda-ExtraBold/font.woff2') format('woff2'), url('../fonts/Rotunda-ExtraBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Rotunda-Medium';
+  src: url('../fonts/Rotunda-Medium/font.woff2') format('woff2'), url('../fonts/Rotunda-Medium/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Rotunda-Regular';
+  src: url('../fonts/Rotunda-Regular/font.woff2') format('woff2'), url('../fonts/Rotunda-Regular/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Rotunda-Light';
+  src: url('../fonts/Rotunda-Light/font.woff2') format('woff2'), url('../fonts/Rotunda-Light/font.woff') format('woff');
+}
+
