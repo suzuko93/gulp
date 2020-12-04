@@ -1,20 +1,22 @@
-let gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	browserSync =  require('browser-sync'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglifyjs'),
-	cssnano = require('gulp-cssnano'),
-	rename = require('gulp-rename'),
-	del = require('del'),
-	imagemin = require('gulp-imagemin'),
-	pngquant = require('imagemin-pngquant'),
-	cache = require('gulp-cache'),
-	twig = require('gulp-twig'),
-	autoprefixer = require('gulp-autoprefixer'),
-	svgSprite = require('gulp-svg-sprite');
+const 	gulp = require('gulp'),
+		sass = require('gulp-sass'),
+		browserSync =  require('browser-sync'),
+		concat = require('gulp-concat'),
+		uglify = require('gulp-uglifyjs'),
+		postcss = require('gulp-postcss'),
+		nano = require('cssnano'),
+		rename = require('gulp-rename'),
+		del = require('del'),
+		imagemin = require('gulp-imagemin'),
+		pngquant = require('imagemin-pngquant'),
+		cache = require('gulp-cache'),
+		twig = require('gulp-twig'),
+		autoprefixer = require('gulp-autoprefixer'),
+		svgSprite = require('gulp-svg-sprite');
 
-gulp.task('svgSprite', function () {
-    return gulp.src('app/img/sprite/*.svg') 
+// svgSprite
+const sprite = () => {
+	return gulp.src('app/img/sprite/*.svg') 
         .pipe(svgSprite({
                 mode: {
                     stack: {
@@ -24,55 +26,81 @@ gulp.task('svgSprite', function () {
             }
         ))
         .pipe(gulp.dest('app/img/'));
-});
+}
 
-gulp.task('clean', async function(){
-  del.sync('dist')
-});
+exports.sprite = sprite;
 
-gulp.task('twig', function () { 
-    return gulp.src('app/template/*.twig') 
+// twig
+const twigTemplate = () => {
+	return gulp.src('app/template/*.twig') 
     .pipe(twig())  
     .pipe(gulp.dest('app/')) 
     .pipe(browserSync.reload({stream: true}));
-});
+}
 
-gulp.task('sass', function(){
+exports.twigTemplate = twigTemplate;
+
+// sass
+const scss = () => {
 	return gulp.src('app/sass/**/*.scss')
 	.pipe(sass())
-	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+	.pipe(postcss([
+		require('autoprefixer'),
+	]))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}))
-});
+}
 
-gulp.task('css-libs', function(){
+exports.scss = scss;
+
+// css-libs
+const csslibs = () => {
 	return gulp.src('app/css/libs.css')
-	.pipe(cssnano())
+	.pipe(postcss([nano()]))
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('app/css'));
-});
+}
 
-gulp.task('scripts', function(){
+exports.csslibs = csslibs
+
+// libscripst
+const libscripts = () => {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/focus-visible/dist/focus-visible.min.js',
 		// 'app/libs/slick/slick/slick.min.js',
 	])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
-});
+	.pipe(gulp.dest('app/js'))
+}
 
-gulp.task('browser-sync', function(){
+exports.libscripts = libscripts;
+
+// scripts
+const scripts = () => {
+	return gulp.src('app/js/**/*.js')
+	.pipe(gulp.dest('dist/js'))
+	.pipe(browserSync.reload({stream: true}));
+}
+
+exports.scripts = scripts;
+
+// browser-sync
+const sync = () => {
 	browserSync({
 		server: {
 			baseDir: 'app'
 		},
 		notify: false
 	});
-});
+}
 
-gulp.task('img', function(){
-	return gulp.src('app/img/**/*')
+exports.sync = sync;
+
+// img
+const img = () => {
+	return gulp.src('app/img/*')
 	.pipe(cache(imagemin({
 		interlaced: true,
 		progressive: true,
@@ -80,31 +108,45 @@ gulp.task('img', function(){
 		use: [pngquant()]
 	})))
 	.pipe(gulp.dest('dist/img'));
-});
+}
 
-gulp.task('export', async function(){
-	let buildCss = gulp.src(['app/css/style.css', 'app/css/libs.min.css'])
-	.pipe(gulp.dest('dist/css'));
+exports.img = img;
 
-	let buildFonts = gulp.src('app/fonts/**/*')
-	.pipe(gulp.dest('dist/fonts'));
+// copyBuild
+const copyBuild = () => {
+	return gulp.src([
+		'app/*.html',
+		'app/fonts/**/*',
+		'app/img/*',
+		'app/js/*.js',
+		'app/css/style.css',
+		'app/css/libs.min.css'
+	], { base: 'app' })
+	.pipe(gulp.dest('dist'))
+	.pipe(browserSync.reload({stream: true}));
+}
 
-	let buildJs = gulp.src('app/js/**/*')
-	.pipe(gulp.dest('dist/js'));
+exports.copyBuild = copyBuild;
 
-	let buildHtml = gulp.src('app/**/*.html')
-	.pipe(gulp.dest('dist/'));
+// clean
+const cleanDist = () => {
+	return del('dist/**/*', { force: true })
+}
 
-	let BuildImg = gulp.src('app/img/**/*')
-    .pipe(gulp.dest('dist/img')); 
-});
+exports.cleanDist = cleanDist;
 
-gulp.task('watch',  function(){
-	gulp.watch('app/sass/**/*.scss', gulp.parallel('sass'));
-	gulp.watch('app/template/**/*.twig', gulp.parallel('twig'));
-	gulp.watch('app/js/**/*.js', gulp.parallel('scripts'));
-});
+// watch
+const watch = () => {
+	gulp.watch('app/sass/**/*.scss', gulp.series(scss));
+	gulp.watch('app/template/**/*.twig', gulp.series(twigTemplate));
+	gulp.watch('app/js/**/*.js', gulp.series(scripts));
+	gulp.watch('app/img/sprite/*.svg', gulp.series(sprite));
+}
 
-gulp.task('build', gulp.parallel('clean', 'export'))
+exports.watch = watch;
 
-gulp.task('default', gulp.parallel('watch', 'svgSprite', 'css-libs', 'scripts', 'twig', 'browser-sync'));
+// build
+exports.build = gulp.series(cleanDist, scss, csslibs, scripts, libscripts, img, twigTemplate, copyBuild);
+
+// default
+exports.default = gulp.parallel(watch, scss, csslibs, scripts, libscripts, twigTemplate, sync);

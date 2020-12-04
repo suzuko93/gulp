@@ -1,6 +1,6 @@
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, pre,
-a, abbr, address, big, cite, code,
+a, abbr, address, big, blockquote, cite, code,
 del, dfn, em, img, ins, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -24,16 +24,26 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
 	display: block;
 }
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
 body {
 	line-height: 1;
-}
-ol, ul, nav, menu {
-	list-style: none;
 }
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+ol, ul, nav, menu {
+	list-style: none;
 }
 img, video, canvas {
   max-width: 100%;
@@ -41,9 +51,21 @@ img, video, canvas {
 img {
 	vertical-align:bottom;
 }
+a, button {
+	cursor: pointer;
+	margin:0;
+	padding:0;
+}
+a:hover, button:hover {
+	cursor: pointer;
+}
 a {
 	text-decoration: none;
 	color: inherit;
+}
+button {
+	border:none;
+	background: transparent;
 }
 table {
   border-collapse: collapse;
@@ -53,31 +75,6 @@ table {
 th, td {
 	vertical-align: middle;
 }
-html,
-body {
-	height: 100%;
-	width: 100%;
-}
 iframe {
 	width: 100%;
-}
-a, button {
-	cursor: pointer;
-	margin:0;
-	padding:0;
-}
-button {
-	border:none;
-	background: transparent;
-}
-a:hover, button:hover {
-	cursor: pointer;
-}
-blockquote {
-	margin:0px;
-}
-* {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
 }

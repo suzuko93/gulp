@@ -8,4 +8,3 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
     }
 };
 };
-
