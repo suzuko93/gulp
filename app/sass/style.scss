@@ -8,18 +8,14 @@
   background: center center / cover no-repeat;
   background-image: url($icon);
 }
-.icon {
-	@include sprite(40px, 39px, "../img/sprite.svg#bronze-medal");
-	margin:50px;
-	border:1px solid red;
-	display: block;
+@mixin placeholder {
+	&::placeholder {@content}
+  	&::-webkit-input-placeholder {@content}
+  	&:-moz-placeholder {@content}
+  	&::-moz-placeholder {@content}
+  	&:-ms-input-placeholder {@content}  
 }
-.btn {
-	width:50px;
-	height:50px;
-	border:2px solid green;
-	border-radius:5px;
-}
+
 /* =========================== polyfills focus-visible */
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
@@ -45,7 +41,7 @@ h1, h2, h3, h4 {
 h1 {
 	font-size: 30px;
 	margin-bottom: 30px;
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: 768px) {
 		font-size: 22px;
 		margin-bottom: 20px;
 	}
@@ -53,7 +49,7 @@ h1 {
 h2 {
 	font-size: 24px;
 	margin-bottom: 30px;
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: 768px) {
 		font-size: 22px;
 		margin-bottom: 20px;
 	}
@@ -113,7 +109,7 @@ a {
 b, strong {
 	font-weight:bold;
 }
-i {
+i, em {
 	font-style:italic;
 }
 img {
@@ -146,18 +142,18 @@ img {
 	transition:all .3s;
 }
 .btn {
-	display: block;
 	position: relative;
 	z-index:1;
-	cursor:pointer;
-	text-align: center;
-	font-weight: bold;
-	font-size: 16px;
-	color: #FFFFFF;
+	display: block;
 	width:172px;
 	height:30px;
 	line-height: 30px;
 	border-radius:15px;
+	cursor:pointer;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
 	margin:0 auto;
 }
 .overly {
@@ -287,46 +283,21 @@ form {
 button {
 	// font-family: "";
 }
-input:focus, textarea:focus {
-	outline: transparent;
+
+input, textarea {
+	@include placeholder {
+		color:#878388;
+		opacity: 1;
+		// font-family: "";
+		font-size:14px;
+	}
+	&:focus {
+		@include placeholder {
+			color:#171717;
+		}
+	}
 }
-input::placeholder {
-	opacity: 1;
-	color: #878388;
-}
-::-webkit-input-placeholder { 
-	color: #878388;
-	opacity: 1;
-	// font-family: "";
-	font-size:14px; 
-}
-::-moz-placeholder { 
-	color: #878388;
-	opacity: 1;
-	// font-family: "";
-	font-size:14px; 
-}
-:-ms-input-placeholder      { 
-	color: #878388; 
-	opacity: 1;
-	// font-family: "";
-	font-size:14px;
-}
-input:focus::-webkit-input-placeholder { 
-	color: #171717;
-}
-input:focus::-moz-placeholder { 
-	color: #171717;
-}
-input:focus:-ms-input-placeholder { 
-	color: #171717; 
-}
-textarea:focus::-moz-placeholder { 
-	color: #171717;
-}
-textarea:focus::placeholder { 
-	color: #171717;
-}
+
 input[type=text]::-ms-clear {  
 	display: none; width : 0; height: 0; 
 }

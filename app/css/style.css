@@ -1475,22 +1475,71 @@ iframe {
   font-display: swap;
   src: local("Rubik-BlackItalic"), url("../fonts/Rubik-BlackItalic.woff") format("woff"); }
 
+/* Catamaran */
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Catamaran-Thin"), url("../fonts/Catamaran-Thin.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Catamaran-ExtraLight"), url("../fonts/Catamaran-ExtraLight.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Catamaran-Light"), url("../fonts/Catamaran-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Catamaran-Regular"), url("../fonts/Catamaran-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Catamaran-Medium"), url("../fonts/Catamaran-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Catamaran-SemiBold"), url("../fonts/Catamaran-SemiBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Catamaran-Bold"), url("../fonts/Catamaran-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Catamaran-ExtraBold"), url("../fonts/Catamaran-ExtraBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Catamaran-Black"), url("../fonts/Catamaran-Black.woff") format("woff"); }
+
 /* ============================ mixin */
-.icon {
-  width: 40px;
-  height: 39px;
-  background: center center / cover no-repeat;
-  background-image: url("../img/sprite.svg#bronze-medal");
-  margin: 50px;
-  border: 1px solid red;
-  display: block; }
-
-.btn {
-  width: 50px;
-  height: 50px;
-  border: 2px solid green;
-  border-radius: 5px; }
-
 /* =========================== polyfills focus-visible */
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none; }
@@ -1513,7 +1562,7 @@ body {
 h1 {
   font-size: 30px;
   margin-bottom: 30px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     h1 {
       font-size: 22px;
       margin-bottom: 20px; } }
@@ -1521,7 +1570,7 @@ h1 {
 h2 {
   font-size: 24px;
   margin-bottom: 30px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     h2 {
       font-size: 22px;
       margin-bottom: 20px; } }
@@ -1580,7 +1629,7 @@ a {
 b, strong {
   font-weight: bold; }
 
-i {
+i, em {
   font-style: italic; }
 
 img {
@@ -1612,18 +1661,18 @@ img {
   transition: all .3s; }
 
 .btn {
-  display: block;
   position: relative;
   z-index: 1;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  color: #FFFFFF;
+  display: block;
   width: 172px;
   height: 30px;
   line-height: 30px;
   border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF;
   margin: 0 auto; }
 
 .overly {
@@ -1735,32 +1784,50 @@ form input {
 form textarea {
   padding: 20px; }
 
-input:focus, textarea:focus {
-  outline: transparent; }
-
-::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #878388;
   opacity: 1;
   font-size: 14px; }
 
-:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #878388;
   opacity: 1;
   font-size: 14px; }
 
-input:focus::-moz-placeholder {
+input::placeholder, textarea::placeholder {
+  color: #878388;
+  opacity: 1;
+  font-size: 14px; }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #878388;
+  opacity: 1;
+  font-size: 14px; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #878388;
+  opacity: 1;
+  font-size: 14px; }
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
   color: #171717; }
 
-input:focus:-ms-input-placeholder {
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   color: #171717; }
 
-textarea:focus::-moz-placeholder {
+input:focus::placeholder, textarea:focus::placeholder {
   color: #171717; }
 
-textarea:focus:-ms-input-placeholder {
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
   color: #171717; }
 
-textarea:focus::placeholder {
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+  color: #171717; }
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+  color: #171717; }
+
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   color: #171717; }
 
 input[type=text]::-ms-clear {

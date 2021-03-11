@@ -1508,3 +1508,76 @@
   font-display: swap;
   src: local("Rubik-BlackItalic"),
   url("../fonts/Rubik-BlackItalic.woff") format("woff"); }
+
+/* Catamaran */
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Catamaran-Thin'),
+  url("../fonts/Catamaran-Thin.woff") format("woff"); }
+
+  @font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local('Catamaran-ExtraLight'),
+  url("../fonts/Catamaran-ExtraLight.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Catamaran-Light"),
+  url("../fonts/Catamaran-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Catamaran-Regular"),
+  url("../fonts/Catamaran-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Catamaran-Medium"),
+  url("../fonts/Catamaran-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Catamaran-SemiBold"),
+  url("../fonts/Catamaran-SemiBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Catamaran-Bold"),
+  url("../fonts/Catamaran-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Catamaran-ExtraBold"),
+  url("../fonts/Catamaran-ExtraBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Catamaran-Black"),
+  url("../fonts/Catamaran-Black.woff") format("woff"); }

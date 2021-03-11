@@ -12,7 +12,8 @@ const 	gulp = require('gulp'),
 		cache = require('gulp-cache'),
 		twig = require('gulp-twig'),
 		autoprefixer = require('gulp-autoprefixer'),
-		svgSprite = require('gulp-svg-sprite');
+		svgSprite = require('gulp-svg-sprite'),
+		htmlbeautify = require('gulp-html-beautify');
 
 // svgSprite
 const sprite = () => {
@@ -34,6 +35,7 @@ exports.sprite = sprite;
 const twigTemplate = () => {
 	return gulp.src('app/template/*.twig') 
     .pipe(twig())  
+    .pipe(htmlbeautify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest('app/')) 
     .pipe(browserSync.reload({stream: true}));
 }
@@ -149,4 +151,4 @@ exports.watch = watch;
 exports.build = gulp.series(cleanDist, scss, csslibs, scripts, libscripts, img, twigTemplate, copyBuild);
 
 // default
-exports.default = gulp.parallel(watch, scss, csslibs, scripts, libscripts, twigTemplate, sync);
+exports.default = gulp.parallel(watch, scss, csslibs, sprite, scripts, libscripts, twigTemplate, sync);
