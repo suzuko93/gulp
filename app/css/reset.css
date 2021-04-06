@@ -47,6 +47,7 @@ ol, ul, nav, menu {
 }
 img, video, canvas {
   max-width: 100%;
+  height:auto;
 }
 img {
 	vertical-align:bottom;
